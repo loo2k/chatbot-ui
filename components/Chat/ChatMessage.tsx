@@ -2,10 +2,10 @@ import {
   IconCheck,
   IconCopy,
   IconEdit,
-  IconRobot,
   IconTrash,
-  IconUser,
 } from '@tabler/icons-react';
+import IconRobot from '../Icon/robot';
+import IconUser from '../Icon/user';
 import { FC, memo, useContext, useEffect, useRef, useState } from 'react';
 
 import { useTranslation } from 'next-i18next';
