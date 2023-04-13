@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 
 import { useFetch } from '@/hooks/useFetch';
+import { useRouter } from 'next/router';
 
 export interface GetModelsRequestProps {
   key: string;
@@ -8,6 +9,8 @@ export interface GetModelsRequestProps {
 
 const useApiService = () => {
   const fetchService = useFetch();
+  const router = useRouter();
+  const basePath = router.basePath;
 
   // const getModels = useCallback(
   // 	(
@@ -27,7 +30,7 @@ const useApiService = () => {
 
   const getModels = useCallback(
     (params: GetModelsRequestProps, signal?: AbortSignal) => {
-      return fetchService.post<GetModelsRequestProps>(`/api/models`, {
+      return fetchService.post<GetModelsRequestProps>(`api/models`, {
         body: { key: params.key },
         headers: {
           'Content-Type': 'application/json',
