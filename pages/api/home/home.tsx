@@ -229,6 +229,7 @@ const Home = ({
   useEffect(() => {
     if (window.innerWidth < 640) {
       dispatch({ field: 'showChatbar', value: false });
+      dispatch({ field: 'showPromptbar', value: false });
     }
   }, [selectedConversation]);
 
